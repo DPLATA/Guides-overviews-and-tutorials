@@ -1,5 +1,5 @@
 # Setting up vim text editor for beginners. 
-This guide was made on Kubuntu 20.04 focal OS. This guide assumes you already have vim installed in your computer and that you have basic understanding of vim modes. Also this guide assumes that you know how to change from command to insert mode and know how to quit vim is also required if you do not know how to do it you should start by learning those basic steps first.
+This guide was made on Kubuntu 20.04 focal OS. This guide assumes you already have vim installed in your computer and that you have basic understanding of vim modes. Also this guide assumes that you know how to change from command to insert mode and knowing how to quit vim is also required if you do not know how to do it you should start by learning those basic steps first.
 
 
 ### Step 1:
