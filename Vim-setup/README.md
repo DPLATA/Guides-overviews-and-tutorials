@@ -1,5 +1,5 @@
 # Setting up vim text editor for beginners. 
-This guide was made on Kubuntu 20.04 focal OS. Also this guide assumes you already have vim installed in your computer and that you have basic understanding of vim modes and that you know how to change from command to insert mode knowing how to quit vim is also required if you do not know how to do it you should start by learning those basic steps first.
+This guide was made on Kubuntu 20.04 focal OS. This guide assumes you already have vim installed in your computer and that you have basic understanding of vim modes. Also this guide assumes that you know how to change from command to insert mode and know how to quit vim is also required if you do not know how to do it you should start by learning those basic steps first.
 
 
 ### Step 1:
@@ -14,7 +14,7 @@ This will create a file named .vimrc under your home dir (~) and then open it di
 ### Step 2:
 Setup vim config inside .vimrc file
 
-Just bear with me on this one just copy for now, explanation is commented out in my .vimrc file.
+Bear with me on this one, just copy for now, explanation is commented out in my .vimrc file.
 
 ```
  set noerrorbells                                                                
@@ -44,7 +44,8 @@ This will create a .vim folder under your home directory.
 Install vim-plug
 
 ```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 This will create a file for vim-plug inside .vim/autoload folder.
@@ -72,8 +73,8 @@ clone YCM repo into your .vim/plugged folder git clone https://github.com/ycm-co
 Install YCM plugin
 
 ```
-git submodule update --init --recursive
 cd ~/.vim/plugged/YouCompleteMe/
+git submodule update --init --recursive
 python3 install.py --all
 ```
 
