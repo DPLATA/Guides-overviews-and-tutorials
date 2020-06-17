@@ -1,6 +1,6 @@
 # Setting up vim text editor for beginners. 
 This guide was made on Kubuntu 20.04 focal OS. This guide assumes you already have vim installed in your computer and that you have basic understanding of vim modes. Also this guide assumes that you know how to change from command to insert mode and knowing how to quit vim is also required if you do not know how to do it you should start by learning those basic steps first.
-
+.vimrc file in this repo is a link to my daily development .vimrc file so it may contain additional lines not covered on this readme.
 
 ### Step 1:
 Create and edit a .vimrc file
