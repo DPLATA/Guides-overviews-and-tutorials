@@ -1,6 +1,6 @@
 # Vim begginer cheatsheet
 
-One Paragraph of project description goes here
+This is a vim commands cheatsheet for begginers, sheet will try to be updated on a regular basis. This cheatsheet is built on LaTeX.
 
 ## Getting Started
 
