@@ -93,53 +93,35 @@
 \node[fancytitle, right=10pt] at (box.north west) {Basic Navigation};
 \end{tikzpicture}
 
-%------------ Inner Product Spaces ---------------
-\begin{tikzpicture}
-\node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-    1. $ \langle v,v \rangle \geq 0$ Furthermore, $ \langle v,v \rangle = 0 \leftrightarrow v = 0 $ \\
-	2. $\langle v,u \rangle = \langle u,v \rangle $ \\
-	3. $ \langle ku,v \rangle =k\langle u,v \rangle $ \\
-	4. $\langle u+v,w\rangle = \langle u,w \rangle + \langle v,w\rangle $ \\
-	$ ||v|| = \langle v, v \rangle $ \\
-    $ \cos^{-1}(\frac{\langle v,u \rangle}{||v|| ||u||}) $
-    \end{minipage}
-};
-%------------ Inner Product Space Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Inner Product Spaces};
-\end{tikzpicture}
-
-%------------ Gram-Schmidt Content ---------------
+%------------ Template Content ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
     \begin{align*}
-  v_{1} &= x_{1} \\
-  v_{2} &= x_{2} - \frac{\langle x_2, v_1\rangle}{||v_{1}||^2}v_{1}\\
-  &\shortvdotswithin{=}
-  v_{n} &= x_{m} - \sum_{k=1}^{m-1} \frac{\langle x_{m},v_{k} \rangle}{||v_{k}||^{2}}v_{k}
     \end{align*}
     \end{minipage}
 };
-%------------ Gram-Schmidt Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Gram-Schmidt};
+%------------ Template Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Title template};
 \end{tikzpicture}
-%------------ Variation of Parameters Content ---------------------
+%------------ Template Content ---------------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
     	\begin{align*}
-        	F(x) &= y'' + y' \\
-            y_h &= b_1y_1(x) + b_2y_2(x), y_1 y_2 \text{ are L.I.} \\
-            y_p &= u_1(x)y_1(x) + u_2(x)y_2(x) \\
-            u_1 &= \int^t -\frac{y_2F(t)dt}{w[y_1,y_2](t)} \\
-            u_2 &= \int^t \frac{y_1F(t)dt}{w[y_1,y_2](t)} \\
-            y &= y_h + y_p
+            \\
+            \\
+            \\
+            \\
+            \\
+            \\
+            \\
+            \\
     	\end{align*}
     \end{minipage}
 };
-%------------ Variation of Parameters Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Variation of Parameters};
+%------------ Template Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Title template};
 \end{tikzpicture}
 
 %------------ Navigation Content ---------------
@@ -220,54 +202,53 @@
 \node[fancytitle, right=10pt] at (box.north west) {Systems};
 \end{tikzpicture}
 
-%------------ Exponentiation Content ---------------
+%------------ Modes Content ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
     \small{
     	\begin{tabular}{lp{4cm} l}
-        $A^n = SD^nS^{-1}$ \\
-        \textit{D is the diagonalization of A}
+       v enter visual mode \\
+       i enter insert mode \\
+       r enter replace mode \\
+       ESC enter command mode \\
 	\end{tabular}}
     \end{minipage}
 };
-%------------ Spring-Mass Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Matrix Exponentiation};
+%------------  Modes Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Modes};
 \end{tikzpicture}
 \
-%------------ Laplace Transforms Content ---------------
+%------------ Editing Content ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-    $L[f](s) = \int_0^{\infty} e^{-sx}f(x)dx $\\
+    a enter insert mode and append text \\
+    o insert new line below cursor and enter insert mode \\
+    x delete character \\
+    u undo changes \\
+    dd delete line \\
+    yy yank or copy line \\
+    p paste line below cursor
 
-    \small{
-    	\begin{tabular}{lp{4cm} l}
-        $f(t) = t^n, n \geq 0 $ &$F(s) = \frac{n!}{s^{n+1}}, s > 0 $ \\
-        $f(t) = e^{at}, a \textit{ constant}$ & $ F(s) = \frac{1}{s-a}, s > a$ \\
-        $f(t) = \sin{bt}, b \textit{ constant}$ & $ F(s) = \frac{b}{s^2 + b^2}, s > 0$ \\
-        $f(t) = \cos{bt}, b \textit{ constant}$ & $ F(s) = \frac{s}{s^2 + b^2}, s > 0$ \\
-        $f(t) = t^{-1/2}$ & $F(s) = \frac{\pi}{s^{1/2}}, s > 0$ \\
-        $f(t) = \delta(t-a)$ & $F(s) = e^{-as}$ \\
-        $f'$ & $L[f'] = sL[f] - f(0)$ \\
-        $f''$ & $L[f''] = s^2 L[f] - sf(0) - f'(0)$ \\
-        $L[e^{at}f(t)]$ & $L[f](s-a)$ \\
-        $L[u_a(t)f(t-a)]$ & $L[f]e^{-as}$
-        \end{tabular}}
     \end{minipage}
 };
-%------------ Laplace Transforms Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Laplace Transforms};
+%------------ Editing Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Editing};
 \end{tikzpicture}
-%------------ Gaussian Integral Content ---------------------
+%------------ Content Template ---------------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-	$\int_{-\infty}^{+\infty} e^{-1/2(\vec{x}^TA\vec{x})} = \frac{\sqrt{2\pi}^n}{\sqrt{\det A}}$
+        \begin{align*}
+            \\
+            \\
+            \\
+        \end{align*}
 	\end{minipage}
 };
-%------------ Gaussian Integral Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Gaussian Integral};
+%------------ Header Template ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Title template};
 \end{tikzpicture}
 \\
 \\
