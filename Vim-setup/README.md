@@ -65,10 +65,9 @@ call plug#end()
 
 
 ### Step 6:
-Install YouCompleteMe plugin
-
+Install YouCompleteMe plugin by cloning YCM repo into your .vim/plugged folder
 ```
-clone YCM repo into your .vim/plugged folder git clone https://github.com/ycm-core/YouCompleteMe.git
+ git clone https://github.com/ycm-core/YouCompleteMe.git
 ```
 Install YCM plugin
 
