@@ -158,50 +158,34 @@
 \node[fancytitle, right=10pt] at (box.north west) {Navigating};
 \end{tikzpicture}
 
-%------------ Series Solution Content ---------------
+%------------ Content Template ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
     \begin{minipage}{0.3\textwidth}
-    $y'' + p(x)y' + q(x)y = 0$ \\
-    Useful when $p(x), q(x)$ not constant \\
-    Guess $y = \sum_{n=0}^{\infty}a_n(x-x_0)^n$
-    \small{
-    	\begin{tabular}{lp{4cm} l}
-        \hline
-        $e^x$ & $\sum_{n=0}^{\infty} x^n/{n!}$ \\ \hline
-        $\sin x$ & $\sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!}x^{2n+1}$ \\ \hline
-        $\cos x$ & $\sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!}x^{2n}$ \\
-	\end{tabular}}
+    \begin{align*}
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+        \\
+    \end{align*}
     \end{minipage}
 };
-%------------ Series Solution Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Series Solution};
+%------------ Header Template ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Title Template};
 \end{tikzpicture}
-
-%------------ Systems of ODE Content ---------------
-\begin{tikzpicture}
-\node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-    \small{
-    	\begin{tabular}{lp{4cm} l}
-        $\vec{x}' = A\vec{x}$ \\
-		\textit{A is diagonalizable} & $\vec{x}(t)=a_{1}e^{\lambda_1 t}\vec{v_1}+\cdots+ a_{n}e^{\lambda_n t}\vec{v_n}$ \\ \hline
-        \textit{A is not diagonalizable} & $\vec{x}(t)=a_1e^{\lambda_1 t}\vec{v_1} + a_2e^{\lambda t}(\vec{w} + t\vec{v} )$ \\
-        & where $(A - \lambda I)\vec{w} = \vec{v} $\\
-        & $\vec{v}$ is an Eigenvector w/ value $\lambda$ \\
-        & i.e. $\vec{w}$ is a generalized Eigenvector \\ \hline
-        $\vec{x}' = A\vec{x} + \vec{B}$ &Solve $y_h$ \\
-        & $\vec{x_1} = e^{\lambda_1t}\vec{v_1}, \vec{x_2} = e^{\lambda_2t}\vec{v_2}$ \\ 			& $\vec{X} = [\vec{x_1},\vec{x_2}]$ \\
-        & $\vec{X}\vec{u}'=\vec{B}$ \\
-        & $y_p = \vec{X}\vec{u}$ \\
-        & $y = y_h + y_p$
-	\end{tabular}}
-    \end{minipage}
-};
-%------------ Systems of ODE Header ---------------------
-\node[fancytitle, right=10pt] at (box.north west) {Systems};
-\end{tikzpicture}
-
 %------------ Modes Content ---------------
 \begin{tikzpicture}
 \node [mybox] (box){%
