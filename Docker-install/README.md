@@ -71,6 +71,7 @@ By default docker group is created so you now only have to add your username to 
 ```
 sudo usermod -aG docker $USER
 ```
+Reboot your system after that.
 ### Step 6: VERIFY THE INSTALLATION
 Run a docker command just to check that your install is ready to go
 ```
