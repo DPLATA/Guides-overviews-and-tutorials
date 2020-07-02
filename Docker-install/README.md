@@ -9,7 +9,6 @@ This guide assumes you have is PC running Fedora 32 workstation OS in its 64 bit
 This guide also assumes that you are trying to do a fresh install on your system where no previous Docker version was installed.
 
 ## Installing
-
 ### Step 1: ROLLBACK TO PREVIOUS CGroups IMPLEMENTATION
 First, you'll have to make some changes to Fedora's firewall in order to facilitate Docker usage, run the following command to enable previous implementation of CGroups:
 ```
@@ -67,51 +66,20 @@ Jul 02 14:11:57 localhost.localdomain systemd[1]: Started Docker Application Co>
 Jul 02 14:11:57 localhost.localdomain dockerd[973]: time="2020-07-02T14:11:57.9>
 ```
 Notice that the service is active and running.
-### Step 5:
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+### Step 5: EXECUTING DOCKER COMMAND WITHOUT SUDO
+By default docker group is created so you now only have to add your username to the docker group
 ```
-Give the example
+sudo usermod -aG docker $USER
 ```
-
-And repeat
-
+### Step 6: VERIFY THE INSTALLATION
+Run a docker command just to check that your installation is ready to go
 ```
-until finished
+docker ps
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
+* **DGPC** 
 ## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
+Big shoutout to this links with which I was able to make my own Docker install. You might want to take a look at them too!
+* [Link 1](https://fedoramagazine.org/docker-and-fedora-32/)
+* [Link 2](https://computingforgeeks.com/how-to-install-docker-on-fedora/)
 
