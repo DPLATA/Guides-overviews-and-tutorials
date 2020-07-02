@@ -8,13 +8,32 @@ Docker is an open source containerization technology for building and containeri
 
 ## Prerequisites
 
-The only thing this guide assumes you have is PC running Fedora 32 workstation OS in its 64 bit version, nothing else is required.
+This guide assumes you have is PC running Fedora 32 workstation OS in its 64 bit version, nothing else is required.
+This guide also assumes that you are trying to do a fresh install on your system where no previous Docker version was installed.
 
 ## Installing
 
-### Step 1:
-### Step 2:
-### Step 3:
+### Step 1: ROLLBACK TO PREVIOUS CGroups IMPLEMENTATION
+First, you'll have to make some changes to Fedora's firewall in order to facilitate Docker usage, run the following command to enable previous implementation of CGroups:
+```
+sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
+```
+### Step 2: GRANT NETWORK ACCESS TO DOCKER
+You'll need to grant Docker with network access, to do that you'll need to run two different commands.
+The first one will add Docker the docker interface to a trusted environment and will allow it to make remote connections:
+```
+sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+```
+The second one will allow Docker to make local connections useful for development environments.
+```
+sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-masquerade
+```
+### Step 3: INSTALL DOCKER
+dnf package manager by default includes moby-engine package which is basically docker engine, we'll use it for simplicity, we'll install docker-compose too.
+docker-compose is a tool useful for defining and running multi-container Docker apps.
+```
+sudo dnf install moby-engine docker-compose
+```
 ### Step 4:
 ### Step 5:
 A step by step series of examples that tell you how to get a development env running
