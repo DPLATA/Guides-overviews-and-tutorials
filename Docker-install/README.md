@@ -2,7 +2,7 @@
 
 This is a guide for installing Docker in Fedora 32 workstation OS, after following this guide you will be able to use Docker on your PC.
 
-##Introduction
+## Introduction
 
 Docker is an open source containerization technology for building and containerizing your apps.
 
@@ -12,11 +12,11 @@ The only thing this guide assumes you have is PC running Fedora 32 workstation O
 
 ## Installing
 
-###Step 1:
-###Step 2:
-###Step 3:
-###Step 4:
-###Step 5:
+### Step 1:
+### Step 2:
+### Step 3:
+### Step 4:
+### Step 5:
 A step by step series of examples that tell you how to get a development env running
 
 Say what the step will be
