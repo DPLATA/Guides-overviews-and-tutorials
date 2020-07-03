@@ -1,18 +1,26 @@
-# Project Title
+# Kubernetes (Minikube) tutorial for complete beginners 
 
-One Paragraph of project description goes here
+This tutorial provides a step by step by guide for developing a simple web server (using Node js and express), containerizing it (using Docker) and deploying it to a kubernetes cluster (using Minukube).
 
 ## Getting Started
 
+**Modify the getting started section**
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+## Audience
 
-What things you need to install the software and how to install them
+This tutorial is prepared for those who want to understand what containerizing and deployment of applications using container orchestration is. This tutorial will help you understand the basic principles of
+dockerizing an app plus kubernetes deployment basics.
 
-```
-Give examples
-```
+## Introduction
+
+
+
+## Prerequisites
+
+This tutorial was built on a PC running Fedora 32 OS so Linux or MacOS environments will be better suited to follow along. You need no previous knowledge about neither Docker nor Kubernetes but their
+installation is beyond the scope of this tutorial, so you should have already running on your PC Docker and Minikube. Also we'll be developing a simple express web server but it's explanation is also not covered
+in this guide so you should have a basic understanding of web development. I'll try my best to explain concepts in depth ;).
 
 ### Installing
 
