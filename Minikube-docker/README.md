@@ -12,15 +12,15 @@ These instructions will get you a copy of the project up and running on your loc
 This tutorial is prepared for those who want to understand what containerizing and deployment of applications using container orchestration is. This tutorial will help you understand the basic principles of
 dockerizing an app plus kubernetes deployment basics.
 
-## Introduction
-
-
-
 ## Prerequisites
 
 This tutorial was built on a PC running Fedora 32 OS so Linux or MacOS environments will be better suited to follow along. You need no previous knowledge about neither Docker nor Kubernetes but their
 installation is beyond the scope of this tutorial, so you should have already running on your PC Docker and Minikube. Also we'll be developing a simple express web server but it's explanation is also not covered
 in this guide so you should have a basic understanding of web development. I'll try my best to explain concepts in depth ;).
+
+## Introduction
+
+
 
 ### Installing
 
