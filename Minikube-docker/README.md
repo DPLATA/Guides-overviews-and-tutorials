@@ -4,8 +4,8 @@ This tutorial provides a step by step by guide for developing a simple web serve
 
 ## Getting Started
 
-**Modify the getting started section**
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. I recommend you to follow along writing your own files but my sourcec code will
+be uploaded in this repo so that you can check it out in case of any problem.
 
 ## Audience
 
