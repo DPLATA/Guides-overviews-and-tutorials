@@ -1,0 +1,14 @@
+{
+  "name": "simple-server",
+  "version": "1.0.0",
+  "description": "This is a simple express server that will be later dockerized and deployed using minikube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DGPC",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
