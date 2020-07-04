@@ -57,6 +57,10 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {console.log('app listening on port:', port)})
 ```
+Start your server
+```
+node index.js
+```
 Now you should be able to go into **http://localhost:8080** in your browser and see Hello Docker + Minikube tutorial! ;)
 
 ### Step 2: DOCKERIZING THE SERVER
