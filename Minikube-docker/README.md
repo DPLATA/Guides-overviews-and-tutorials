@@ -20,27 +20,46 @@ in this guide so you should have a basic understanding of web development, plus 
 
 ## Introduction
 
+### Kubernetes
+Kubernetes or K8's is an open-source system originally developed by google for automating deployment, scaling and management of containerized applications.
+### Docker
+On the other hand Docker is an open platform for developing, shipping and running applications. Docker enables you to separate your apps from infrastructure so you can deliver software quicker.
+### Docker + kubernetes
+Kubernetes as a container orchestrator let you manage your Dockerized applications in a production setting.
+### Minikube
+Minikube is a way of running kubernetes clusters in your local environment.
 
+## Now the fun part
+### Step 1: DEVELOP THE WEB SERVER
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+You'll want to have your server on a separate directory, so create one
 ```
-Give the example
+mkdir server && cd server
 ```
-
-And repeat
-
+Init your project
 ```
-until finished
+npm init
 ```
+You'll have to fill out some of your project's info like author, version, git repo and description.
+Once it's done, create your server file
+```
+touch index.js
+```
+Now add the following to have your server fully functional.
+```
+let express = require('express');
+let app = express();
+let port = 8080;
 
-End with an example of getting some data out of the system or using it for a little demo
+app.get('/', (req, res) => {
+    res.send('Hello Docker + Minikube tutorial! ;)')
+});
 
-## Running the tests
+app.listen(port, () => {console.log('app listening on port:', port)})
+```
+Now you should be able to go into **http://localhost:8080** in your browser and see Hello Docker + Minikube tutorial! ;)
+
+### Step 2: DOCKERIZING THE SERVER
 
 Explain how to run the automated tests for this system
 
