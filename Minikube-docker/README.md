@@ -65,17 +65,18 @@ Now you should be able to go into **http://localhost:8080** in your browser and 
 
 ### Step 2: DOCKERIZING THE SERVER
 
-Now that the simple web server is up and running you'll want to dockerize ii in order to deploy it using Minikube.
-For dockerizing ithe server first create a .dockerignore file that's useful foroptimizing the docker image.
+Now that the simple web server is up and running you'll want to dockerize it in order to deploy it using Minikube.
+For dockerizing the server first create a .dockerignore file that's useful for optimizing the docker image.
 ```
 touch .dockerignore
 ```
-In it for now you'll just want to add de node modules directory but I encourage you to learn more about it why it's useful and how to create a perfect .dockerignore file.
+In it for now you'll just want to add de node modules directory but I encourage you to learn more about it, why it's useful and how to create a perfect .dockerignore file.
 ```
 node_modules
 ```
-Now the dockerfile!
+Now the dockerfile!  
 A Dockerfile is the file that specifies how you want to build your image. Just copy for now I'll explain a little bit after you copy.
+
 ```
 FROM node:latest
 
@@ -91,7 +92,7 @@ EXPOSE 8080
 
 CMD ["node", "index.js"]
 ```
-So what this is doing is first choosing the latest nodejs image available in the docker hub for using it as the building block in which we are going to add our app. It seems like a good idea to use a node image since our app is built using node and express but there are a lot more images available in the docker hub. After that a workdir is established and everything we copy is going to be copied into that folder. Now we'll build the app inside the container for that we need the dependencies in our container so we'll COPY our package.json and package-lock.json and run the installation of dependencies declared in those file for that you'll RUN npm install inside the container.
+So what this is doing is first choosing the latest nodejs image available in the docker hub for using it as the building block in which we are going to add our app. It seems like a good idea to use a node image since our app is built using node and express but there are a lot more images available in the docker hub. After that a WORKDIR is established and everything we copy is going to be copied into that folder. Now we'll build the app inside the container for that we need the dependencies in our container so we'll COPY our package.json and package-lock.json and run the installation of dependencies declared in those file for that you'll RUN npm install inside the container.
 Next COPY the whole app and EXPOSE inside the container the port in which the app is meant to run in this case we declared that port to be 8080.
 All that's left to do now is start de application which the last line of the file is meant to do.
 ### Break down into end to end tests
