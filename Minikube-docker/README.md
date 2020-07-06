@@ -95,6 +95,21 @@ So what this is doing is first choosing the latest nodejs image available in the
 Next COPY the whole app and EXPOSE inside the container the port in which the app is meant to run in this case we declared that port to be 8080.
 All that's left to do now is start the application which the last line of the file is meant to do.
 
+Now to build the image you should be positioned inside your sever folder and run the following command:
+```
+docker build -t myexpressserver .
+```
+This will build your docker image based on the Dockerfile rececntly created. The image name will be myexpressserver or any other you'd like to put instead.  
+Now let's run it just to verify that everything is working fine.
+```
+docker run --name myexpresscontainer -p 8000:8080 -d myexpressserver
+```
+So what does this command do? well, it starts a docker process; it starts the previously built image (myexpressserver) as a docker container named myexpresscontainer (or you could name it differently), maps your computer's port 8000 to the container's port 8080 (which is the one that exposes the application), plus the process is executed in detach mode which basically means that the process is ran in the background.
+
+Now you should be able to go into **http://localhost:8000** in your browser and see Hello Docker + Minikube tutorial! ;)  
+
+Notice that the port changed that is because of the mapping we did on the running the image stage. Also notice that the container is running the app, not your computer. Isn't that cool?
+
 ## Built With
 
 * [link](http://www.dropwizard.io/1.0.2/docs/) - Link 1 to dropwizard now but about to be changed - the web framework used
