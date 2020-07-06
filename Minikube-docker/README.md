@@ -30,8 +30,8 @@ Kubernetes as a container orchestrator let you manage your Dockerized applicatio
 Minikube is a way of running kubernetes clusters in your local environment.
 
 ## Now the fun part
-### Step 1: DEVELOP THE WEB SERVER
 
+### Step 1: DEVELOP THE WEB SERVER
 You'll want to have your server on a separate directory, so create one
 ```
 mkdir server && cd server
@@ -64,7 +64,6 @@ node index.js
 Now you should be able to go into **http://localhost:8080** in your browser and see Hello Docker + Minikube tutorial! ;)
 
 ### Step 2: DOCKERIZING THE SERVER
-
 Now that the simple web server is up and running you'll want to dockerize it in order to deploy it using Minikube.
 For dockerizing the server first create a .dockerignore file that's useful for optimizing the docker image.
 ```
@@ -95,49 +94,14 @@ CMD ["node", "index.js"]
 So what this is doing is first choosing the latest nodejs image available in the docker hub for using it as the building block in which we are going to add our app. It seems like a good idea to use a node image since our app is built using node and express but there are a lot more images available in the docker hub. After that a WORKDIR is established and everything we copy is going to be copied into that folder. Now we'll build the app inside the container for that we need the dependencies in our container so we'll COPY our package.json and package-lock.json and run the installation of dependencies declared in those file for that you'll RUN npm install inside the container.
 Next COPY the whole app and EXPOSE inside the container the port in which the app is meant to run in this case we declared that port to be 8080.
 All that's left to do now is start the application which the last line of the file is meant to do.
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [link](http://www.dropwizard.io/1.0.2/docs/) - Link 1 to dropwizard now but about to be changed - the web framework used
 
-## Contributing
+## Author
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **DGPC** 
 
 ## Acknowledgments
 
