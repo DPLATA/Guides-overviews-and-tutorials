@@ -95,11 +95,11 @@ So what this is doing is first choosing the latest nodejs image available in the
 Next COPY the whole app and EXPOSE inside the container the port in which the app is meant to run in this case we declared that port to be 8080.
 All that's left to do now is start the application which the last line of the file is meant to do.
 
-Now to build the image you should be positioned inside your sever folder and run the following command:
+Now to build the image you should be positioned inside your server folder and run the following command:
 ```
 docker build -t myexpressserver .
 ```
-This will build your docker image based on the Dockerfile rececntly created. The image name will be myexpressserver or any other you'd like to put instead.  
+This will build your docker image based on the Dockerfile recently created. The image name will be myexpressserver or any other you'd like to put instead.  
 Now let's run it just to verify that everything is working fine.
 ```
 docker run --name myexpresscontainer -p 8000:8080 -d myexpressserver
