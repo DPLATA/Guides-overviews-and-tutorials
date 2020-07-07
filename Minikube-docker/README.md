@@ -128,7 +128,7 @@ So now the why on copying the image from your local PC to your minikube environm
 ```
 minikube ip
 ```
-This will output your cluster's ip write it down. Next step is to copy the server project into your cluster.
+This will output your cluster's ip address, write it down. Next step is to copy the server project into your cluster.
 ```
 scp -r server docker@yourminikubeIPaddress:~/
 ```
