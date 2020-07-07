@@ -15,7 +15,7 @@ dockerizing an app plus kubernetes deployment basics.
 ## Prerequisites
 
 This tutorial was built on a PC running Fedora 32 OS so Linux or MacOS environments will be better suited to follow along. You need no previous knowledge about neither Docker nor Kubernetes but their
-installation is beyond the scope of this tutorial, so you should have already running on your PC Docker and Minikube. Also we'll be developing a simple express web server but it's explanation is also not covered
+installation is beyond the scope of this tutorial, so you should have already running on your PC Docker, Minikube and kubectl. Also we'll be developing a simple express web server but it's explanation is also not covered
 in this guide so you should have a basic understanding of web development, plus have installed Node js and npm. I'll try my best to explain concepts in depth ;).
 
 ## Introduction
@@ -45,7 +45,7 @@ Once it's done, create your server file
 ```
 touch index.js
 ```
-Now add the following to have your server fully functional.
+Now add the following to have your server fully functional
 ```
 let express = require('express');
 let app = express();
@@ -64,12 +64,12 @@ node index.js
 Now you should be able to go into **http://localhost:8080** in your browser and see Hello Docker + Minikube tutorial! ;)
 
 ### Step 2: DOCKERIZING THE SERVER
-Now that the simple web server is up and running you'll want to dockerize it in order to deploy it using Minikube.
-For dockerizing the server first create a .dockerignore file that's useful for optimizing the docker image.
+Now that the simple web server is up and running you'll want to dockerize it in order to deploy it using Minikube.  
+For dockerizing the server first create a .dockerignore file that's useful for optimizing the Docker image
 ```
 touch .dockerignore
 ```
-In it for now you'll just want to add the node modules directory but I encourage you to learn more about it, why it's useful and how to create a perfect .dockerignore file.
+In it for now you'll just want to add the node modules directory but I encourage you to learn more about it, why it's useful and how to create a perfect .dockerignore file
 ```
 node_modules
 ```
@@ -95,20 +95,36 @@ So what this is doing is first choosing the latest nodejs image available in the
 Next COPY the whole app and EXPOSE inside the container the port in which the app is meant to run in this case we declared that port to be 8080.
 All that's left to do now is start the application which the last line of the file is meant to do.
 
-Now to build the image you should be positioned inside your server folder and run the following command:
+Now to build the image you should be positioned inside your server folder and run the following command
 ```
 docker build -t myexpressserver .
 ```
-This will build your docker image based on the Dockerfile recently created. The image name will be myexpressserver or any other you'd like to put instead.  
-Now let's run it just to verify that everything is working fine.
+This will build your Docker image based on the Dockerfile recently created. The image name will be myexpressserver or any other you'd like to put instead.   
+Now let's run it just to verify that everything is working fine
 ```
 docker run --name myexpresscontainer -p 8000:8080 -d myexpressserver
 ```
 So what does this command do? well, it starts a docker process; it starts the previously built image (myexpressserver) as a docker container named myexpresscontainer (or you could name it differently), maps your computer's port 8000 to the container's port 8080 (which is the one that exposes the application), plus the process is executed in detach mode which basically means that the process is ran in the background.
-
 Now you should be able to go into **http://localhost:8000** in your browser and see Hello Docker + Minikube tutorial! ;)  
-
 Notice that the port changed that is because of the mapping we did on the running the image stage. Also notice that the container is running the app, not your computer. Isn't that cool?
+
+### Step 3: MINIKUBE
+Now that the web server is containerized as a Docker image, let's deploy it to a kubernetes cluster, we'll do it using minikube which lets you run a local single node kubernetes cluster, and kubectl which is a command line tool for managing kubernetes clusters, so let's begin.  
+First thing is to start our kubernetes cluster
+```
+minikube start
+```
+Minikube runs on a VM so lets ssh into it
+```
+minikube ssh
+```
+We'll need to copy our image (more on this later) into our kubernetes cluster so for that we'll set up a password for our docker (default) user in our minikube VM
+```
+sudo passwd docker
+```
+Fill in your new password and retype it to confirm, don't forget to write it down so you don't lose it, you'll need it later.
+Now that your password is set up type exit to return to your PC terminal environment.  
+So now the why on copying the image from your local PC to your minikube environment. Your PC has its own Docker registry and since Minikube runs on a VM runs its own (different from your PC's) Docker registry, so Docker images on your PC will not necessarily be on your Minikube cluster.
 
 ## Built With
 
