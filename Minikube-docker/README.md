@@ -124,8 +124,22 @@ sudo passwd docker
 ```
 Fill in your new password and retype it to confirm, don't forget to write it down so you don't lose it, you'll need it later.
 Now that your password is set up type exit to return to your PC terminal environment.  
-So now the why on copying the image from your local PC to your minikube environment. Your PC has its own Docker registry and since Minikube runs on a VM runs its own (different from your PC's) Docker registry, so Docker images on your PC will not necessarily be on your Minikube cluster.
-
+So now the why on copying the image from your local PC to your minikube environment. Your PC has its own Docker registry and since Minikube runs on a VM runs its own (different from your PC's) Docker registry, so Docker images on your PC will not necessarily be on your Minikube cluster, unless you manually copy the dockerfile into your minikube environment and build the image, so let's do it.
+```
+minikube ip
+```
+This will output your cluster's ip write it down. Next step is to copy the server project into your cluster.
+```
+scp -r server docker@yourminikubeIPaddress:~/
+```
+This will prompt a text input for you to type in the previously created password. Verify that directory copied successfully.
+```
+minikube ssh
+```
+```
+ls
+```
+You should see as output the directory name.
 ## Built With
 
 * [link](http://www.dropwizard.io/1.0.2/docs/) - Link 1 to dropwizard now but about to be changed - the web framework used
