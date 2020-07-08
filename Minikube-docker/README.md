@@ -145,7 +145,7 @@ Now you should build the image inside the cluster
 docker build -t myexpressserver .
 ```
 So now all that's left to do is create a kubernetes deployment, and expose it through a service.  
-Kubernetes is managed through yaml files, so let's create a sample yaml file for configuring a deployment which we'll modify afterwards
+Kubernetes is managed through yaml files, so let's create a sample yaml file for configuring a deployment which we'll modify afterwards, but you should exit your minikube terminal first
 ```
 kubectl create deployment expressdeployment --image=myexpressserver --dry-run=client -o yaml > expressdeployment.yaml
 ```
