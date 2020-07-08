@@ -139,7 +139,18 @@ minikube ssh
 ```
 ls
 ```
-You should see as output the directory name.
+You should see as output the directory name.  
+Now you should build the image inside the cluster
+```
+docker build -t myexpressserver .
+```
+So now all that's left to do is create a kubernetes deployment, and expose it through a service.  
+Kubernetes is managed through yaml files, so let's create a sample yaml file for configuring a deployment which we'll modify afterwards
+```
+kubectl create deployment expressdeployment --image=myexpressserver --dry-run=client -o yaml > expressdeployment.yaml
+```
+This will generate expressdeployment.yaml file inside your root project folder, or you could create a separate folder to keep your kubernetes configuration files just like I did.
+
 ## Built With
 
 * [link](http://www.dropwizard.io/1.0.2/docs/) - Link 1 to dropwizard now but about to be changed - the web framework used

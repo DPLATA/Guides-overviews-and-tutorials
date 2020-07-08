@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: expressdeployment
+  name: expressdeployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: expressdeployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: expressdeployment
+    spec:
+      containers:
+      - image: myexpressserver
+        name: myexpressserver
+        resources: {}
+status: {}
