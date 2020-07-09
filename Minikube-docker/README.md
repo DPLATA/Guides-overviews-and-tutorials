@@ -192,7 +192,9 @@ Now you'll just have to expose the deployment through a service
 ```
 kubectl expose deployment expressdeployment --type=LoadBalancer --target-port=8080 --port=80
 ```
-Minikube won't assign an extrenal IP address for the service but in a cloud environment the kubernetes engine will assign one and port 80 (default http) will map to your app.
+Minikube won't assign an extrenal IP address for the service but in a cloud environment the kubernetes engine will assign one and port 80 (default http) will map to your app.  
+And that's it, you are all done for deploying a docker image in a kubernetes cluster using Minikube.
+If you have any doubts you can try to contact me. I'm by no means the greatest kubernetes mind but sure I can try to help out! ;)
 
 ## Author
 
