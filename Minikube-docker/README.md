@@ -177,11 +177,11 @@ spec:
         resources: {}
 status: {}
 ```
-Now in the spec: containers: section right at the end of the filea after the name you should add the following (remember that in yaml file indentation is important so you should work at the same level)
+Now in the spec: containers: section right at the end of the file after the name you should add the following (remember that in yaml file indentation is important so you should work at the same level)
 ```
 imagePullPolicy: IfNotPresent
 ports:
-    - containerPort: 8080
+- containerPort: 8080
 ```
 Now that the yaml file is modified run the following
 ```
