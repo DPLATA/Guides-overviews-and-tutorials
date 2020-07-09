@@ -187,11 +187,12 @@ Now that the yaml file is modified run the following
 ```
 kubectl apply -f expressdeployment.yaml
 ```
-This will create a pod with your web server and a deployment containing a single replica of that pod.
-
-## Built With
-
-* [link](http://www.dropwizard.io/1.0.2/docs/) - Link 1 to dropwizard now but about to be changed - the web framework used
+This will create a pod with your web server and a deployment containing a single replica of that pod.  
+Now you'll just have to expose the deployment through a service
+```
+kubectl expose deployment expressdeployment --type=LoadBalancer --target-port=8080 --port=80
+```
+Minikube won't assign an extrenal IP address for the service but in a cloud environment the kubernetes engine will assign one and port 80 (default http) will map to your app.
 
 ## Author
 
@@ -199,8 +200,8 @@ This will create a pod with your web server and a deployment containing a single
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
+ Hat tip to the following resources with which I built this tutorial
+* [kubernetes reference docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#expose) 
+* [kubernetes deployment tutorial](https://devopscube.com/kubernetes-deployment-tutorial/)
+* [Kubernetes cluster setup](https://jee-appy.blogspot.com/2018/05/setup-kubernetes-cluster-locally.html)
 
