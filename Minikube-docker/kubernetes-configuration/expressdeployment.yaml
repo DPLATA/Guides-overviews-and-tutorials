@@ -20,5 +20,8 @@ spec:
       containers:
       - image: myexpressserver
         name: myexpressserver
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080 
         resources: {}
 status: {}

@@ -149,7 +149,45 @@ Kubernetes is managed through yaml files, so let's create a sample yaml file for
 ```
 kubectl create deployment expressdeployment --image=myexpressserver --dry-run=client -o yaml > expressdeployment.yaml
 ```
-This will generate expressdeployment.yaml file inside your root project folder, or you could create a separate folder to keep your kubernetes configuration files just like I did.
+This will generate expressdeployment.yaml file inside your root project folder, or you could create a separate folder to keep your kubernetes configuration files just like I did.  
+Now let's edit that file, at first you should have something like this
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: expressdeployment
+  name: expressdeployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: expressdeployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: expressdeployment
+    spec:
+      containers:
+      - image: myexpressserver
+        name: myexpressserver
+        resources: {}
+status: {}
+```
+Now in the spec: containers: section right at the end of the filea after the name you should add the following (remember that in yaml file indentation is important so you should work at the same level)
+```
+imagePullPolicy: IfNotPresent
+ports:
+    - containerPort: 8080
+```
+Now that the yaml file is modified run the following
+```
+kubectl apply -f expressdeployment.yaml
+```
+This will create a pod with your web server and a deployment containing a single replica of that pod.
 
 ## Built With
 
